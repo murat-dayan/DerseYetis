@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "159982956490",
+    "project_id": "derseyetis-9ad35",
+    "storage_bucket": "derseyetis-9ad35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159982956490:android:5162248276e3f9af8b2933",
+        "android_client_info": {
+          "package_name": "com.derseyetis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159982956490-n6hqsof3iluvmk4ecgkakclm7bm84n2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyEiR93MNgLNPdU_WiX8P3N76JgkE4waM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159982956490-n6hqsof3iluvmk4ecgkakclm7bm84n2q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "159982956490-imlqgv1r9eivc9ufj306jauebvo8u0h8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.derseyetis"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
