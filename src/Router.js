@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, Alert} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -33,6 +33,21 @@ const App = () => {
     );
   };
 
+  function logOutApp(){
+    Alert.alert(
+      "Derse Yetiş",
+      "Hesabınızdan çıkış yapmak istediğinize emin misiniz?",
+      [
+        {
+          text: "Hayır",
+          onPress: () => console.log('çıkış iptal edildi') ,
+          style: "cancel"
+        },
+        { text: "Evet", onPress: () => auth().signOut()  }
+      ]
+    );
+  }
+
   return (
     <NavigationContainer>
       {!userSession ? (
@@ -48,7 +63,7 @@ const App = () => {
                   name="logout"
                   size={30}
                   color={colors.darkgreen}
-                  onPress={() => auth().signOut()}
+                  onPress={logOutApp}
                 />
               ),
             }}

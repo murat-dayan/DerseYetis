@@ -8,6 +8,8 @@ import moment from 'moment/min/moment-with-locales';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import parseContentData from '../../../utils/parseContentData';
+import {showMessage} from 'react-native-flash-message';
+import authErrorMessageParser from '../../../utils/authErrorMessageParser';
 
 const requestLocationPermission = async () => {
   try {
@@ -50,6 +52,9 @@ const Home = () => {
   }, []);
 
   const getLocation = () => {
+
+    
+
     const result = requestLocationPermission();
     result.then(res => {
       console.log('res is' + res);
@@ -73,7 +78,7 @@ const Home = () => {
     });
   };
 
-  function sendContent() {
+  function sendContent(location) {
     if (location == null) {
       return;
     }
@@ -87,7 +92,19 @@ const Home = () => {
       longitude: location.coords.longitude,
     };
 
-    database().ref('locations/').push(contentObj);
+    try {
+      database().ref('locations/').push(contentObj);
+      showMessage({
+        message: "Konum isteğiniz atılmıştır",
+        type: 'success',
+      });
+      
+    } catch (error) {
+      showMessage({
+        message: authErrorMessageParser(error.message),
+        type: 'danger',
+      });
+    }
   }
 
   return (
